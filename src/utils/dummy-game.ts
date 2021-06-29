@@ -13,6 +13,7 @@ const createDummyGame = (): GameModel => {
     coins: [],
     players: [],
     isStarted: false,
+    msCoin: 3000,
   };
 };
 
