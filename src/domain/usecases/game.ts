@@ -2,7 +2,6 @@ import { GameModel } from "../model/game-model";
 import { PlayerModel } from "../model/player-model";
 
 export interface CreateGameModel {
-  pointsTime: number;
   maxPlayers: number;
   maxPoints: number;
   maxTime: number;

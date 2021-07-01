@@ -4,7 +4,6 @@ import { CoinModel as Coin } from "./coin-model";
 export interface GameModel {
   id: string;
   players: Array<Player>;
-  pointsTime: number;
   maxPlayers: number;
   maxPoints: number;
   maxTime: number;
