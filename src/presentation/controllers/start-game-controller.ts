@@ -7,8 +7,8 @@ export class StartGameController implements Controller {
   constructor(private readonly startGame: StartGame) {}
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const game = this.startGame.startGame();
-      return ok(game);
+      const startGame = this.startGame.startGame();
+      return ok("ok");
     } catch (err) {
       console.log(err);
       return serverError(err);

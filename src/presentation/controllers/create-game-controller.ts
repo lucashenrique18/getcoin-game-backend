@@ -9,7 +9,6 @@ export class CreateGameController implements Controller {
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredFields = [
-        "pointsTime",
         "maxPlayers",
         "maxPoints",
         "maxTime",
@@ -22,17 +21,9 @@ export class CreateGameController implements Controller {
           return badRequest(new MissingParamError(field));
         }
       }
-      const {
-        pointsTime,
-        maxPlayers,
-        maxPoints,
-        maxTime,
-        rangeX,
-        rangeY,
-        msCoin,
-      } = httpRequest.body;
+      const { maxPlayers, maxPoints, maxTime, rangeX, rangeY, msCoin } =
+        httpRequest.body;
       const game = await this.game.createGame({
-        pointsTime,
         maxPlayers,
         maxPoints,
         maxTime,
