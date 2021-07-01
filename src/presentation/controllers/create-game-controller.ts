@@ -15,14 +15,22 @@ export class CreateGameController implements Controller {
         "maxTime",
         "rangeX",
         "rangeY",
+        "msCoin",
       ];
       for (const field of requiredFields) {
         if (!httpRequest.body[field]) {
           return badRequest(new MissingParamError(field));
         }
       }
-      const { pointsTime, maxPlayers, maxPoints, maxTime, rangeX, rangeY } =
-        httpRequest.body;
+      const {
+        pointsTime,
+        maxPlayers,
+        maxPoints,
+        maxTime,
+        rangeX,
+        rangeY,
+        msCoin,
+      } = httpRequest.body;
       const game = await this.game.createGame({
         pointsTime,
         maxPlayers,
@@ -30,6 +38,7 @@ export class CreateGameController implements Controller {
         maxTime,
         rangeX,
         rangeY,
+        msCoin,
       });
       return ok(game);
     } catch (err) {

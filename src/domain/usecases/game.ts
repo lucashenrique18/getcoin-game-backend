@@ -8,6 +8,7 @@ export interface CreateGameModel {
   maxTime: number;
   rangeX: number;
   rangeY: number;
+  msCoin: number;
 }
 
 export interface AddPlayerModel {

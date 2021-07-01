@@ -10,7 +10,7 @@ export class GameUseCase implements CreateGame {
     this.game.maxPlayers = gameData.maxPlayers;
     this.game.maxPoints = gameData.maxPoints;
     this.game.maxTime = gameData.maxTime;
-    this.game.msCoin = 2000;
+    this.game.msCoin = gameData.msCoin;
     return this.game;
   }
 }
